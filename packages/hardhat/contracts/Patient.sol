@@ -34,6 +34,14 @@ contract Patient {
         accessList[doctor] = false;
     }
 
+    /// @notice Revokes doctor access to the patient's medical records
+    /// @param doctor The wallet address of the doctor
+    function revokeAccess(address doctor) public onlyOwner {
+        doctorAccessList[doctor] = false;
+        doctorEncryptedKeys[doctor] = ""; //remove the AES key of the doctor
+    }
+
+    /// @notice Retrieves the encryption key of the transaction sender, provided the sender is a registered doctor.
     function getEncryptionKey() external view returns (string memory) {
         require(accessList[msg.sender], "Access denied");
         return encryptedKeys[msg.sender];

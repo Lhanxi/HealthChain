@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../contractConfig";
 import { Container, Box, Typography, Button, Card, CardContent } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { connectWallet } from "../utils/connectWallet";
+import { Link } from "react-router-dom"; 
 
-function HomePage() {
-    const [account, setAccount] = useState(null);
-    const [contract, setContract] = useState(null);
-    const [provider, setProvider] = useState(null);
+function HomePage({ account, setAccount, provider, setProvider }) {
+    const [contract, setContract] = React.useState(null);
 
     const handleConnectWallet = async () => {
         const walletData = await connectWallet();
@@ -121,6 +120,42 @@ function HomePage() {
                                 </Button>
                             </Box>
                         )}
+
+                        {/* Link to RegisterPage */}
+                        <Box textAlign="center" mt={3}>
+                            <Link to="/register">
+                                <Button variant="contained" color="secondary" size="large">
+                                    Go to Register Page
+                                </Button>
+                            </Link>
+                        </Box>
+
+                        {/* Link to Register Doctor Page */}
+                        <Box textAlign="center" mt={3}>
+                            <Link to="/registerDoctor">
+                                <Button variant="contained" color="secondary" size="large">
+                                    Register as a Doctor
+                                </Button>
+                            </Link>
+                        </Box>
+
+                        {/* Link to Register Insurance Company Page */}
+                        <Box textAlign="center" mt={3}>
+                            <Link to="/registerInsuranceCompany">
+                                <Button variant="contained" color="secondary" size="large">
+                                    Register as an insurance company
+                                </Button>
+                            </Link>
+                        </Box>
+
+                        {/* Link to Research Access Page */}
+                        <Box textAlign="center" mt={3}>
+                            <Link to="/research">
+                                <Button variant="contained" color="secondary" size="large">
+                                    Go to Research Access
+                                </Button>
+                            </Link>
+                        </Box>
                     </CardContent>
                 </Card>
             </Container>

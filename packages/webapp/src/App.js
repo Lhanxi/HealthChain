@@ -1,8 +1,11 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ViewPatientData from "./pages/ViewPatientData";
 
+function App() {
+    const [account, setAccount] = useState(null);
+    const [provider, setProvider] = useState(null);
 
 const App = () => (
   <div>
