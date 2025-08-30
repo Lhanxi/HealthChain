@@ -119,26 +119,4 @@ describe("Insurance Company Contracts Tests", function() {
     });
   });
 
-  // Test InsuranceCompanyHandler Contract
-  describe("InsuranceCompanyHandler", function() {
-    it("needs modification for testability like DoctorHandler", function() {
-      // The InsuranceCompanyHandler contract has the same limitation as DoctorHandler
-      // where removeInsuranceCompany can only be called by the contract itself:
-      //
-      // function removeInsuranceCompany(address _insuranceCompany) public {
-      //     require(msg.sender == address(this), "Only contract can call this function");
-      //     delete insuranceCompanyContracts[_insuranceCompany];
-      //     emit InsuranceCompanyAuthenticationRemoved(_insuranceCompany);
-      // }
-      //
-      // To make it testable, we would need to modify it like the DoctorHandler:
-      //
-      // function removeInsuranceCompany(address _insuranceCompany) public {
-      //     require(msg.sender == address(this) || msg.sender == owner, 
-      //             "Only contract or owner can call this function");
-      //     delete insuranceCompanyContracts[_insuranceCompany];
-      //     emit InsuranceCompanyAuthenticationRemoved(_insuranceCompany);
-      // }
-    });
-  });
 }); 
