@@ -1,6 +1,6 @@
 ## Project Summary
 
-This project is a decentralized healthcare data management platform leveraging blockchain (Ethereum smart contracts), a React web application, and a Node.js backend with MongoDB. It enables secure, privacy-preserving storage and sharing of patient health data, with fine-grained access control for doctors, insurance companies, and research purposes.
+A decentralized healthcare data management platform leveraging blockchain (Ethereum smart contracts), a React web application, and a Node.js backend with MongoDB.
 
 ### Key Components
 
